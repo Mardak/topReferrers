@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+// Set background for all tds that match a url.
+function setBackground(url, color) {
+  for (let td of document.querySelectorAll(`td[data-url="${url}"]`)) {
+    td.style.backgroundColor = color;
+  }
+}
+
+// Detect hovering over entries to highlight others.
+let lastUrl;
+addEventListener("mouseover", ({ target }) => {
+  let { url } = target.dataset;
+  if (url !== lastUrl) {
+    setBackground(lastUrl, "");
+    setBackground(url, "rgba(17, 85, 255, 0.5)");
+  }
+
+  lastUrl = url;
+});
+</script>
+<style>
+td {
+  white-space: nowrap;
+}
+</style>
+<title>Top Referrers</title>
+<body>
+<table id="results">
+  <tr id="header"></tr>
+</table>
+</body>
+</html>
