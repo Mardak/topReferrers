@@ -39,7 +39,7 @@ self.options.data.forEach(([ago, count, url, title]) => {
 // Create 2-d array of page rows and months ago columns.
 let tableData = [];
 for (let i = 0; i < mostPages; i++) {
-  tableData.push(new Array(monthsAgo.size).fill({}));
+  tableData.push(new Array(monthsAgo.size).fill(null));
 }
 
 // Add in actual page rank data for the table.
@@ -83,6 +83,7 @@ tableData.forEach(row => {
     let td = document.createElement("td");
     tr.appendChild(td);
 
+    // Skip entries for months that don't have this ranked row.
     if (!col) {
       return;
     }
