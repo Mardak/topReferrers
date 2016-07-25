@@ -1,6 +1,7 @@
 {
   "author": "Edward Lee (Mardak)",
   "description": "Show which pages are the top referrers over time.",
+  "id": "top.referrers@agadak.net",
   "license": "MPL 2.0",
   "main": "index.js",
   "name": "top-referrers",
